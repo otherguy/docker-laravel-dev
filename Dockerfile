@@ -33,9 +33,6 @@ RUN usermod -u 1000 www-data
 # Change working directory
 WORKDIR /srv
 
-# Make '/srv' a volume
-VOLUME /srv
-
 # HTTP port should be exposed
 EXPOSE ${HTTP_PORT}
 
