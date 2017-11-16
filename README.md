@@ -12,6 +12,16 @@ I use [zeit.co](https://zeit.co) and [hyper.sh](https://hyper.sh) for dev deploy
 
 I'm not a fan of huge containers that bundle Apache, PHP, MySQL and other applications into one but I also do not want a complicated multi-container setup for a development-stage deployment because of the associated cost.
 
+This image can be used as a simple base for your own Laravel development deployments. Here is a simple example:
+
+```Dockerfile
+FROM winternight/docker-laravel-dev:latest
+COPY . /srv
+RUN COMPOSER_ALLOW_SUPERUSER=1 composer install
+RUN php artisan migrate:fresh --seed
+RUN php artisan route:cache
+```
+
 ## Description
 
 This is a docker image for an all-purpose PHPFPM (PHP Version 7.2) container.  It is based on the `7.1-cli-alpine` tag of the [official PHP Docker image](https://hub.docker.com/_/php/). [Patch version](http://semver.org) upgrades are thus done automatically on build (e.g. `7.1.x` to `7.1.y`) but for minor version upgrades (e.g. `7.1.x` to `7.2.x`), a new Dockerfile should be created and tagged appropriately.
