@@ -8,7 +8,7 @@ Find it on [Dockerhub](https://hub.docker.com/r/winternight/docker-laravel-dev/b
 
 ## Motivation
 
-I use [zeit.co](https://zeit.co) and [hyper.sh](https://hyper.sh) for dev deployments that need to be accessible to clients. For Laravel-based applications, a Docker image is necessary since [hyper.sh](https://hyper.sh) is made specifically for Docker and [zeit.co](https://zeit.co)only natively support NodeJS.
+I use [zeit.co](https://zeit.co) and [hyper.sh](https://hyper.sh) for dev deployments that need to be accessible to clients. For Laravel-based applications, a Docker image is necessary since [hyper.sh](https://hyper.sh) is made specifically for Docker and [zeit.co](https://zeit.co) only natively support NodeJS.
 
 I'm not a fan of huge containers that bundle Apache, PHP, MySQL and other applications into one but I also do not want a complicated multi-container setup for a development-stage deployment because of the associated cost.
 
