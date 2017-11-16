@@ -10,7 +10,7 @@ ENV HTTP_PORT 80
 # Install dependencies
 RUN apk --no-cache add --virtual .build-deps $PHPIZE_DEPS \
   && apk --no-cache add --repository http://dl-cdn.alpinelinux.org/alpine/edge/community --virtual .ext-deps libmcrypt-dev freetype-dev \
-  libjpeg-turbo-dev libpng-dev shadow curl curl-dev libxml2-dev icu-dev msmtp openssl-dev pkgconfig \
+  libjpeg-turbo-dev libpng-dev shadow curl curl-dev libxml2-dev icu-dev msmtp openssl-dev pkgconfig nodejs \
   && docker-php-source extract \
   && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ \
                                  --with-png-dir=/usr/include/ \
@@ -21,7 +21,7 @@ RUN apk --no-cache add --virtual .build-deps $PHPIZE_DEPS \
   && docker-php-ext-enable xdebug \
   && docker-php-source delete \
   && apk del .build-deps \
-  && rm -rf /var/cache/apk/*    
+  && rm -rf /var/cache/apk/*
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- \
