@@ -10,7 +10,7 @@ ENV HTTP_PORT 80
 # Install dependencies
 RUN apk --no-cache add --virtual .build-deps $PHPIZE_DEPS \
   && apk --no-cache add --repository http://dl-cdn.alpinelinux.org/alpine/edge/community --virtual .ext-deps gcc g++ pkgconfig autoconf automake make g++ libtool nasm libmcrypt-dev freetype-dev \
-  libjpeg-turbo-dev libpng-dev shadow curl curl-dev libxml2-dev icu-dev msmtp openssl-dev optipng pngquant \
+  libjpeg-turbo-dev libpng-dev shadow curl curl-dev libxml2-dev icu-dev msmtp openssl-dev optipng pngquant libintl icu \
   && apk --no-cache add --repository http://dl-cdn.alpinelinux.org/alpine/edge/community --repository http://dl-cdn.alpinelinux.org/alpine/edge/main --repository http://dl-cdn.alpinelinux.org/alpine/v3.6/community nodejs-current nodejs-current-npm \
   && docker-php-source extract \
   && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ \
