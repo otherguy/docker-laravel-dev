@@ -16,7 +16,7 @@ RUN apk --no-cache add --virtual .build-deps $PHPIZE_DEPS \
   && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ \
                                  --with-png-dir=/usr/include/ \
                                  --with-jpeg-dir=/usr/include/ \
-  && docker-php-ext-install pcntl curl dom gd hash iconv intl json mbstring mysqli opcache pdo pdo_mysql session sockets tokenizer xml zip \
+  && docker-php-ext-install soap pcntl curl dom gd hash iconv intl json mbstring mysqli opcache pdo pdo_mysql session sockets tokenizer xml zip \
   && yes '' | pecl install apcu-5.1.8 xdebug \
   && docker-php-ext-enable apcu \
   && docker-php-ext-enable xdebug \
