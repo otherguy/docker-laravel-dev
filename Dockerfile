@@ -24,8 +24,8 @@ RUN apk --no-cache add --virtual .build-deps $PHPIZE_DEPS \
   && rm -rf /var/cache/apk/*
 
 # Install composer
-RUN curl -sS https://getcomposer.org/installer | php -- \
-  --install-dir=/usr/bin --filename=composer
+RUN curl --silent --show-error https://getcomposer.org/installer | php -- \
+    --install-dir=/usr/bin --filename=composer
 
 # Hack to change uid of 'www-data' to 1000
 RUN usermod -u 1000 www-data
