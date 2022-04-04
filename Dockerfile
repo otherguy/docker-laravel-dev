@@ -1,5 +1,5 @@
 # From PHP 7.1 CLI image based on Alpine Linux
-FROM php:7.1-cli-alpine
+FROM php:8.1-cli-alpine
 
 # Maintainer
 MAINTAINER Alexander Graf <alex@basecamp.tirol>
